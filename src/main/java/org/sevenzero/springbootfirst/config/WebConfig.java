@@ -15,6 +15,13 @@ import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 
+ * @author lb
+ * 
+ * 过滤器
+ *
+ */
 @Configuration
 public class WebConfig {
 	

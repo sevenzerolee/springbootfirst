@@ -1,5 +1,7 @@
 /home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/controller/IndexController.java
+/home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/config/ConfigBean.java
 /home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/config/WebConfig.java
+/home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/controller/LearnResourceController.java
 /home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/config/MyProperties.java
 /home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/AppStart.java
 /home/lb/code/workspace-sts-3.5.1.RELEASE/springbootfirst/src/main/java/org/sevenzero/springbootfirst/controller/WelcomeController.java
