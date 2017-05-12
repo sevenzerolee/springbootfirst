@@ -3,16 +3,21 @@ package org.sevenzero.springbootfirst.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/learn")
 public class LearnResourceController {
 	
+	private static final Logger log = Logger.getLogger(LearnResourceController.class);
+	
     @RequestMapping("/")
-    public ModelAndView index(){
+    public String index(Model model){
+    	log.info("## ");
+    	
         List<LearnResouce> learnList =new ArrayList<LearnResouce>();
         LearnResouce bean =new LearnResouce("官方参考文档","Spring Boot Reference Guide","http://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#getting-started-first-application");
         learnList.add(bean);
@@ -34,9 +39,12 @@ public class LearnResourceController {
         learnList.add(bean);
         bean =new LearnResouce("林祥纤博客系列","从零开始学Spring Boot ","http://412887952-qq-com.iteye.com/category/356333");
         learnList.add(bean);
-        ModelAndView modelAndView = new ModelAndView("/index");
-        modelAndView.addObject("learnList", learnList);
-        return modelAndView;
+//        ModelAndView modelAndView = new ModelAndView("/index");
+//        modelAndView.addObject("learnList", learnList);
+        
+        model.addAttribute("learnList", learnList);
+        
+        return "index";
     }
 }
 
