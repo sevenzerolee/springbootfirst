@@ -7,6 +7,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 
+ * @author lb
+ * 
+ * Test JSP
+ *
+ */
 @Controller
 public class WelcomeController {
 	

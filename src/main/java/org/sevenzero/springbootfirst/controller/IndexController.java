@@ -1,6 +1,8 @@
 package org.sevenzero.springbootfirst.controller;
 
 import org.apache.log4j.Logger;
+import org.sevenzero.springbootfirst.config.ConfigBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,17 +12,17 @@ public class IndexController {
 	
 	private static final Logger log = Logger.getLogger(IndexController.class);
 	
-	@Value("${org.sevenzero.name}")
-	private String name;
+	@Value("${org.sevenzero.index}")
+	private String index;
 	
-	@Value("${org.sevenzero.id}")
-	private String id;
+	@Autowired
+	private ConfigBean config;
 	
-
 	@RequestMapping("/")
 	String home() {
-		log.info(name + " " + id);
-		return "Home Index " + name + ". " + id;
+		log.info(index);
+		log.info(config.getName());
+		return "Home Index " + index + "[ " + config.getName() + "." + config.getId() + " ]";
 	}
 	
 }

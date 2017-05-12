@@ -1,7 +1,7 @@
 package org.sevenzero.springbootfirst.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -10,8 +10,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  *         注入配置文件中的配置
  *
  */
+@Component
 @ConfigurationProperties(prefix = "org.sevenzero")
-@EnableConfigurationProperties({ConfigBean.class})
 public class ConfigBean {
 
 	private String name;
