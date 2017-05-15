@@ -13,7 +13,7 @@ public class IndexController {
 	private static final Logger log = Logger.getLogger(IndexController.class);
 	
 	@Value("${org.sevenzero.index}")
-	private String index;
+	private String index = "org.sevenzero.index";
 	
 	@Autowired
 	private ConfigBean config;
