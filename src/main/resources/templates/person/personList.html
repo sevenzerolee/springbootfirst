@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Person Test For Thymeleat</title>
+
+<link th:href="@{/bootstrap-3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap-3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
+
+</head>
+<body>
+<div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">List</h3>
+		</div>
+		<div>
+			<span th:text="${page}"></span>
+			<span th:text="${page.pageNum+1}"></span>
+			<div th:if="${page.pageNum} &gt; 2">大于</div>
+			<div th:if="${page.pageNum} ge 2">大于等于</div>
+			<div th:if="${page.pageNum} &lt; 2">小于</div>
+			<div th:if="${page.pageNum} le 2">小于等于</div>
+			<div th:if="${page.pageNum} eq 2">等于</div>
+			<div th:if="${page.pageNum} neq 2">不等于</div>
+		</div>
+	</div>
+	
+	<div th:if="${not #lists.isEmpty(page.list)}">
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<table class="table table-striped">
+					<tr>
+						<th>编号</th>
+						<th>姓名</th>
+						<th>年龄</th>
+						<th>出生日期</th>
+					</tr>
+					<tr th:each="p:${page.list}">
+						<td th:text="${p.id}"></td>
+						<td th:text="${p.name}"></td>
+						<td th:text="${p.age}"></td>
+						<td th:text="${p.birth}"></td>
+					</tr>
+					
+					<tr th:if="${page.pages} &gt; 1">
+						<td><a th:href="@{/person/getPersonList?pageNum=1}">首页</a></td>
+						<td th:if="${page.pageNum} &gt; 1">
+							<a th:href="@{/person/getPersonList(pageNum=${page.pageNum - 1})}">上一页</a>
+						</td>
+						<td th:if="${page.pageNum} &lt; ${page.pages}">
+							<a th:href="@{/person/getPersonList(pageNum=${page.pageNum + 1})}">下一页</a>
+						</td>
+						<td><a th:href="@{/person/getPersonList(pageNum=${page.pages})}">末页</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>

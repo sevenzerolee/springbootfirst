@@ -19,6 +19,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <pagehelper.version>4.1.6</pagehelper.version>
   </properties>
 
 	<dependencies>
@@ -55,11 +56,30 @@
         <artifactId>spring-boot-devtools</artifactId>
         <optional>true</optional>
     </dependency>
-    
-    	<dependency>
+
+	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 		<version>5.1.40</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.mybatis.spring.boot</groupId>
+		<artifactId>mybatis-spring-boot-starter</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+
+	<!-- <dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>3.4.4</version>
+	</dependency> -->
+
+	<!--分页插件 -->
+	<dependency>
+		<groupId>com.github.pagehelper</groupId>
+		<artifactId>pagehelper</artifactId>
+		<version>${pagehelper.version}</version>
 	</dependency>
 
 		<!-- <dependency>
