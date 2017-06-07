@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>File Upload</title>
+
+<link th:href="@{/bootstrap-3.3.7/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap-3.3.7/css/bootstrap-theme.min.css}" rel="stylesheet" />
+
+</head>
+<body>
+<div>
+	<div >
+			<form class="well" th:method="POST" enctype="multipart/form-data" th:action="@{/file/upload}">
+					<label>Label name</label>
+					<input class="span3" type="file" name="file" />
+				
+  					<button type="submit" class="btn">Submit</button>
+			</form>
+		</div>
+	
+
+</div>
+</body>
+</html>
