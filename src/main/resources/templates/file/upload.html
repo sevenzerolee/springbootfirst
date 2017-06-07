@@ -10,16 +10,43 @@
 </head>
 <body>
 <div>
-	<div >
-			<form class="well" th:method="POST" enctype="multipart/form-data" th:action="@{/file/upload}">
-					<label>Label name</label>
-					<input class="span3" type="file" name="file" />
-				
-  					<button type="submit" class="btn">Submit</button>
-			</form>
+		<div class="well">上传文件
+			<div>
+				<form class="well" th:method="POST" enctype="multipart/form-data"
+					th:action="@{/file/upload}">
+					<input id="file" class="span3" type="file" name="file" />
+					<button id="submit" type="submit" class="btn">Submit</button>
+				</form>
+			</div>
 		</div>
-	
+		
+		<div class="well">上传多个文件
+			<div>
+				<form class="well" th:method="POST" enctype="multipart/form-data"
+					th:action="@{/file/uploadmult}">
+					<input id="file-2" class="span3" type="file" name="file" />
+					<input id="file-3" class="span3" type="file" name="file" />
+					<button type="submit" class="btn">Submit</button>
+				</form>
+			</div>
+		</div>
 
-</div>
+	</div>
+
+<script th:src="@{/jquery/jquery-1.12.4.min.js}"></script>
+<script type="text/javascript">
+
+	console.log("jquery out");
+
+	$(document).ready(function() {
+		console.log("jquery in");
+		
+		$("#submit").bind("click", function() {
+			console.log("click");
+			return true;
+		});
+		
+	});
+</script>
 </body>
 </html>
