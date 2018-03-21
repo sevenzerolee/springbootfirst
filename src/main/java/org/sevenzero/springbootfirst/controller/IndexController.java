@@ -19,9 +19,10 @@ public class IndexController {
 	private ConfigBean config;
 	
 	@RequestMapping("/")
-	String home() {
+	String home(String a) {
 		log.info(index);
 		log.info(config.getName());
+		log.info("a = " + a);
 		return "Home Index " + index + "[ " + config.getName() + "." + config.getId() + " ]";
 	}
 	
