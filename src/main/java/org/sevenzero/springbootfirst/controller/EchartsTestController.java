@@ -3,6 +3,8 @@ package org.sevenzero.springbootfirst.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +19,9 @@ public class EchartsTestController {
 	private static final Logger log = Logger.getLogger(EchartsTestController.class);
 	
 	@RequestMapping("/get")
-	public Data getUser() {
+	public Data getUser(HttpSession session) {
 		
+		log.info("## " + session.getId());
 		log.info("get data");
 		
 		List<Chars> list = new ArrayList<>();
